@@ -1,10 +1,10 @@
 <template>
   <div data-test="user-image">
-    <b-img v-if="url" data-test="dynamic-image" :src="require(`@/assets/images/${url}`)"></b-img> 
+    <b-img v-if="url" data-test="dynamic-image" :src="imgUrl"></b-img>
     <b-img
       v-else
       data-test="mock-image"
-      :src="require('@/assets/images/icons/member-wight-full.svg')">
+      :src="staticImage">
     </b-img>
   </div>
 </template>
@@ -17,8 +17,16 @@ export default {
     default: null
 	},
 	data() {
-		return {}
-	}
+		return {
+      // imgUrl: require(`@/assets/images/${this.url}`),
+      staticImage: require('@/assets/images/icons/member-wight-full.svg')
+    }
+	},
+  computed: {
+    imgUrl() {
+      if (this.url) return require(`@/assets/images/${this.url}`)
+    }
+  }
 }
 </script>
 

@@ -1,20 +1,33 @@
 <template>
-<b-button 
+<b-button
       :class="classes"
       :to="to"
       :style="{ 'background-color': bg }"
       @click="$emit('clickFn')"
+      data-test="button"
   >
-  <div v-if="circle" class="circle" align-v="center">
+  <div v-if="circle" class="circle" align-v="center" data-test="button-container">
       <b-img v-if="icon" :src="require(`@/assets/images/icons/${icon}.svg`)"></b-img>
+      <!--
+        NOTE: Must add Bootstrap icons as well in case if we need an icon from there
+        <b-icon :icon="bsIcon" />
+      -->
   </div>
   <div v-else>
     <b-avatar v-if="icon && pullRight" >
-    <b-img :src="require(`@/assets/images/icons/${icon}.svg`)"></b-img>
+      <b-img :src="require(`@/assets/images/icons/${icon}.svg`)"></b-img>
+      <!--
+          NOTE: Must add Bootstrap icons as well in case if we need an icon from there
+          <b-icon :icon="bsIcon" />
+        -->
     </b-avatar>
-    <span v-if="!circle" style="font-size: 12px">{{ btnTitle }}</span>
+    <span style="font-size: 12px" data-test="button-text">{{ btnTitle }}</span>
     <b-avatar v-if="icon && !pullRight">
-    <b-img :src="require(`@/assets/images/icons/${icon}.svg`)"></b-img>
+      <b-img :src="require(`@/assets/images/icons/${icon}.svg`)"></b-img>
+      <!--
+          NOTE: Must add Bootstrap icons as well in case if we need an icon from there
+          <b-icon :icon="bsIcon" />
+        -->
     </b-avatar>
   </div>
   </b-button>

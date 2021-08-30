@@ -20,15 +20,14 @@ export default {
 	name: 'Label',
 	props: {
 		text: String,
-    color: {
-			type: String,
-			default: 'var(--color-primary)'
-		},
 		url: String,
 		icon: Boolean,
 		active: Boolean,
 		offline: Boolean,
-		
+		color: {
+			type: String,
+			default: '--color-primary'
+		},
 		border: String
 	},
 	data() {

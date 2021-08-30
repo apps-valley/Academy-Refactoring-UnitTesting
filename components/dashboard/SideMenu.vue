@@ -14,7 +14,6 @@
       <template>
         <!-- logo -->
         <div class="sidemenu_logo text-center">
-          <b-img :src="settings.white_logo"></b-img>
           <!-- <Title big white no_spaces>{{ $t("academi") }}</Title> -->
           <div class="toggle-btn-wrap">
             <b-button @click="changeVisible" class="toggle-btn"

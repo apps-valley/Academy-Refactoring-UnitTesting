@@ -4,7 +4,6 @@ import InputCheckbox from '@/components/InputCheckbox.vue'
 
 let wrapper
 
-// This test might be simple because Button test was tested already.
 describe('InputCheckbox', () => {
 	beforeEach(() => {
 		const localVue = createLocalVue()
