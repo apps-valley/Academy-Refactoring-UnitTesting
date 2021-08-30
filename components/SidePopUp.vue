@@ -9,7 +9,7 @@
       lazy
       right
       width="35rem"
-      
+      data-test="sidebar"
     >
       <div class="text-center">
        <h5>{{title}}</h5>
@@ -29,16 +29,16 @@
 
 <script>
 import ListComponent from './ListComponent.vue'
-  import InputSelect from './InputSelect.vue'
-    export default {
-      name: "SidePopUp",
-      components: {ListComponent, InputSelect},
-      props: {
-        title: String,
-        title_2: String,
-        text: String,
-        listType: String
-      }, 
-    }
+import InputSelect from './InputSelect.vue'
+export default {
+	name: 'SidePopUp',
+	components: {ListComponent, InputSelect},
+	props: {
+		title: String,
+		title_2: String,
+		text: String,
+		listType: String
+	}, 
+}
 </script>
 

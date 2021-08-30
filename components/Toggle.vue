@@ -15,7 +15,7 @@
         v-else 
         class="switch-without-text"
     >
-        <input type="checkbox" @click="toggleCheckbox">
+        <input type="checkbox" @click="toggleCheckbox" id="togBtnNoText">
         <div class="switch-without-text__slider switch-without-text__round"></div>
       </label>
     </div> 

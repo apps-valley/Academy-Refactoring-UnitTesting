@@ -1,20 +1,19 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import { BootstrapVue } from 'bootstrap-vue'
-import InputText from '@/components/InputText.vue'
+import InputTextArea from '@/components/InputTextArea.vue'
 
 let wrapper
 
-describe('InputText', () => {
+describe('InputTextArea', () => {
 	beforeEach(() => {
 		const localVue = createLocalVue()
 		localVue.use(BootstrapVue)
 
-		wrapper = mount(InputText, {
+		wrapper = mount(InputTextArea, {
 			text: '',
 			localVue,
 			propsData: {
-				placeHolder: 'Input text',
-				icon: 'book'
+				placeHolder: 'Input textarea',
 			}
 		})
 	})
@@ -30,7 +29,7 @@ describe('InputText', () => {
 
 	test('render all props', async () => {
 		const inputWrapper = wrapper.find('[data-test=\'input\']')
-		expect(wrapper.props('icon')).toBe('book')
+
 		expect(inputWrapper.attributes()['placeholder']).toBe(
 			wrapper.props().placeHolder
 		)
