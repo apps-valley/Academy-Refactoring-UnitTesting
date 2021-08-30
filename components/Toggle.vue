@@ -23,38 +23,40 @@
 
 <script>
 export default {
-    data: {
-    checkbox: false
-  },
-  methods: {
-    toggleCheckbox() {
-      this.checkbox = !this.checkbox
-      this.$emit('setCheckboxVal', this.checkbox)
-    }
-  },
-    props: {
-        on: String,
-        off: String,
-    },
-    data() {
-        return {
-            currentState: false
-        }
-    },
-    computed: {
-        isActive() {
-            return this.currentState;
-        },
+	data: function() {
+		return {
+			checkbox: false
+		}
+	},
+	methods: {
+		toggleCheckbox() {
+			this.checkbox = !this.checkbox
+			this.$emit('setCheckboxVal', this.checkbox)
+		}
+	},
+	props: {
+		on: String,
+		off: String,
+	},
+	data() {
+		return {
+			currentState: false
+		}
+	},
+	computed: {
+		isActive() {
+			return this.currentState
+		},
 
-        checkedValue: {
-            get() {
-                return this.currentState
-            },
-            set(newValue) {
-                this.currentState = newValue;
-            }
-        }
-    }
+		checkedValue: {
+			get() {
+				return this.currentState
+			},
+			set(newValue) {
+				this.currentState = newValue
+			}
+		}
+	}
 }
 </script>
 

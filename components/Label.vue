@@ -1,14 +1,14 @@
 <template>
-  <label 
-    :style="bgColor" 
+  <label
+    :style="{ 'background-color': this.color }"
     :class="{
       'active' : active,
       'offline': offline
       }">
-    <b-img 
-      v-if="icon" 
-      class="icon" 
-      :src="url" 
+    <b-img
+      v-if="icon"
+      class="icon"
+      :src="url"
       alt="icon">
     </b-img>
     {{text}}
@@ -17,31 +17,23 @@
 
 <script>
 export default {
-  name: "Label",
-  props: {
-    text: String,
-    url: String,
-    icon: Boolean,
-    active: Boolean,
-    offline: Boolean,
+	name: 'Label',
+	props: {
+		text: String,
     color: {
-        type: String,
-        default: '--color-primary'
-    },
-    border: String
-  },
-  computed: {
-    bgColor() {
-        return {
-            '--bg-color': this.color
-        };
-    },
-    borderColor() {
-        return {
-            '--bd-color': this.border
-        };
-    },
-  }
+			type: String,
+			default: 'var(--color-primary)'
+		},
+		url: String,
+		icon: Boolean,
+		active: Boolean,
+		offline: Boolean,
+		
+		border: String
+	},
+	data() {
+		return {}
+	},
 
 }
 </script>
@@ -49,11 +41,12 @@ export default {
 <style scoped>
   label{
     background-color: var(--bg-color);
-    border: 2px solid var(--bd-color);
-    padding: 5px 15px;
-    border-radius: 15px;
+    border: 1px solid var(--bd-color);
+    padding: 2px 15px;
+    border-radius: 25px;
     color: white;
     display: inline-flex;
+    font-size: 12px;
   }
   .icon{
       width: 20px;
@@ -62,12 +55,12 @@ export default {
       margin: 3px 2px;
   }
   .active{
-    background-color: lightgreen;
-    border: green 2px solid;
-    color: green;
+    background-color: #24e8a73a;
+    border: var(--color-secondry) 2px solid;
+    color: var(--color-secondry);
   }
   .offline{
-    background-color: lightcoral;
+    background-color: #ff00443a;
     border: var(--color-red) 2px solid;
     color: var(--color-red);
   }

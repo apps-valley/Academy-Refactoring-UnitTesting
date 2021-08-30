@@ -1,24 +1,27 @@
 <template>
     <div>
-        <img class="bigImage" src='https://cdn.iconscout.com/icon/premium/png-512-thumb/empty-folder-1519007-1284948.png' alt="EMPTY">
+        <img class="bigImage" src='~/assets/images/empty.svg' alt="EMPTY">
         <p> لا يوجد{{text}}</p>
         <NuxtLink to="#" class="text-center">
-            <img class="icon" src="../../assets/images/icons/plus.svg" alt="">
+            <img class="icon" src="~/assets/images/icons/plus.svg" alt="">
             <b-button variant="link">
                 {{buttonText}}
                 </b-button>
-        </NuxtLink> 
+        </NuxtLink>
     </div>
 </template>
 
 <script>
 export default {
-  name: "EmptyState",
-  props: {
-    text: String,
-    buttonText: String,
-  },
-};
+	name: 'EmptyState',
+	props: {
+		text: String,
+		buttonText: String,
+	},
+	data() {
+		return {}
+	}
+}
 </script>
 
 <style scoped>

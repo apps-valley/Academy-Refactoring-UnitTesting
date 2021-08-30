@@ -1,22 +1,25 @@
 <template>
-  <div class="user-image">
-    <img v-if="url" class="user-image__with-url" :src="url" />
-    <img
+  <div data-test="user-image">
+    <b-img v-if="url" data-test="dynamic-image" :src="require(`@/assets/images/${url}`)"></b-img> 
+    <b-img
       v-else
-      class="user-image__default"
-      src="../../assets/images/icons/member-wight-full.svg"
-      alt="user image"
-    />
+      data-test="mock-image"
+      :src="require('@/assets/images/icons/member-wight-full.svg')">
+    </b-img>
   </div>
 </template>
 
 <script>
 export default {
-  name: "UserImage",
-  props: {
-    url: String,
-  },
-};
+	name: 'UserImage',
+	props: {
+		url: String,
+    default: null
+	},
+	data() {
+		return {}
+	}
+}
 </script>
 
 <style scoped>
