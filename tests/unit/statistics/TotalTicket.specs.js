@@ -15,41 +15,8 @@ let wrapper
 
 // NOTE: this is just a mock
 // The real component should use scoped slots or props
-const MockComponent = {
-  template: `
-    <b-card variant="primary" style="border-radius: 50% 50% 5% 5%">
-      <b-container>
-        <b-row data-test="row">
-          <b-col data-test="icon-col">
-            <b-avatar>
-              <b-icon :icon="user" data-test="icon" />
-            </b-avatar>
-          </b-col>
-          
-          <b-col>
-            <p>
-              {{ text }}
-            </p>
 
-            <h5>
-              {{ count }}
-            </h5>
-          </b-col>
-        </b-row>
-      </b-container>
-    </b-card>
-  `,
-  props: {
-    text: {
-      type: String,
-      default: 'Meow 😺'
-    },
-    count: {
-      type: String,
-      default: '123456'
-    }
-  }
-}
+import TotalTicket from '@/components/TotalTicket'
 
 describe('Test TotalTicket component', () => {
   beforeEach(() => {
@@ -57,7 +24,7 @@ describe('Test TotalTicket component', () => {
     localVue.use(BootstrapVue)
     localVue.component('b-icon', BIcon)
     
-    wrapper = mount(MockComponent, {
+    wrapper = mount(TotalTicket, {
       localVue,
     })
 
@@ -80,22 +47,14 @@ describe('Test TotalTicket component', () => {
     expect(row.exists()).toBeTruthy()
     expect(cols.length).toBe(2)
   });
-
-
-  it('should test icon properties', () => {
-    const icon = wrapper.find("[data-test='icon']")
-
-    expect(icon.attributes().width).toBe('1em') // change the 1em
-});
-  
 })
 
 describe('should be reusable', () => {
   beforeEach(() => {
     const ParentComponent = {
-      template: '<MockComponent />',
+      template: '<total-ticket />',
       components: {
-        MockComponent
+        TotalTicket
       }
     }
     const localVue = createLocalVue()
@@ -104,6 +63,11 @@ describe('should be reusable', () => {
     
     wrapper = mount(ParentComponent, {
       localVue,
+      propsData: {
+        title: 'String',
+        count: 54235,
+        icon: 'certification'
+      }
     })
 
   })

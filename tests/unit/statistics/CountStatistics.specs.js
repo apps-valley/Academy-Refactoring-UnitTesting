@@ -8,27 +8,9 @@ import {
 } from 'bootstrap-vue'
 
 // import Component from '@/components/Whatever.vue'
+import CountStatistics from '@/components/CountStatistics'
 
-const MockComponent = {
-  template: `
-    <b-card class="rounded">
-      <b-container>
-        <b-row>
-          <b-col>
-            <b-avatar>
-              <b-icon class="primary" data-test="count-icon" />
-            <b-avatar>
-          </b-col>
 
-          <b-col>
-            <p data-test="count-number" class="text-primary"></p>
-            <p data-test="desc"></p>
-          </b-col>
-        </b-row>
-      </b-container>
-    </b-card>
-  `
-}
 let wrapper
 
 describe('Count component', () => {
@@ -37,8 +19,13 @@ describe('Count component', () => {
 		localVue.use(BootstrapVue)
 		localVue.component('b-icon', BIcon)
 
-		wrapper = mount(MockComponent, {
+		wrapper = mount(CountStatistics, {
 			localVue,
+      propsData: {
+        title: 'String',
+        count: 54235,
+        icon: 'certification'
+      }
 		})
 	})
 
@@ -57,7 +44,7 @@ describe('Count component', () => {
     const cols = row.findAll('.col')
 
     expect(card.exists()).toBe(true)
-    expect(card.attributes().class).toContain('rounded')
+    expect(card.attributes().class).toContain('card')
     expect(row.exists()).toBe(true)
     expect(cols.length).toBe(2)
   });
@@ -70,20 +57,24 @@ describe('Count component', () => {
     const number = wrapper.find("[data-test='count-number']")
 
     expect(icon.exists()).toBe(true)
-    expect(icon.attributes().class).toContain('primary')
 
     expect(number.exists()).toBe(true)
     expect(number.attributes().class).toContain('primary')
   });
 })
 
-describe('Test Reusability for the StudentFinancial component', () => {
+describe('Test Reusability for the count component', () => {
   const ParentComponent = {
     template: `
-      <MockComponent />
+      <count-statistics />
     `,
+    propsData: {
+      title: 'String',
+      count: 54235,
+      icon: "certification"
+    },
     components: {
-      'MockComponent': MockComponent,
+      'count-statistics': CountStatistics,
     }
   }
   beforeEach(() => {

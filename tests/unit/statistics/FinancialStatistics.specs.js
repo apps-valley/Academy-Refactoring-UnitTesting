@@ -10,67 +10,28 @@ import {
 
 // import component here
 // import Statistics from '@/components/WhateverComponent'
-
+import FinancialStatistics from '@/components/FinancialStatistics'
 let wrapper
 
 // NOTE: this is just a mock
 // The real component should use scoped slots or props
-const mockComponent = {
-  template: `
-    <b-row data-test="row" tag="b-card">
-      <b-col data-test="icon-col">
-        <b-avatar>
-          <b-icon icon="arrow-up" data-test="icon" />
-        </b-avatar>
-      </b-col>
-      <b-col data-test="text-col-wrapper">
-        <b-row data-test="top-text">
-          <p>
-            {{ topText }}
-          </p>
-        </b-row>
-        <b-row data-test="middle-text">
-          <p data-test="middle-paragraph">
-            {{ middleText }}
-          </p>
-          <h5 data-test="middle-title">
-            {{ middleTitle }}
-          </h5>
-        </b-row>
-        <b-row data-test="bottom-text">
-          {{ bottomText }}
-        </b-row>
-      </b-col>
-    </b-row>
-  `,
-  props: {
-      topText: {
-        type: String,
-        default: 'meow 😺'
-      },
-      middleText: {
-        type: String,
-        default: 'this is a cat that'
-      },
-      middleTitle: {
-        type: String,
-        default: 'Meowwwws 😺😺😺'
-      },
-      bottomText: {
-        type: String,
-        default: 'Cats also purrrr 😺😺😺'
-      }
-    }
-  }
+
 
 describe('Type#1 => Financial cards', () => {
 	beforeEach(() => {
 		const localVue = createLocalVue()
 		localVue.use(BootstrapVue)
     localVue.component('b-icon', BIcon)
-		wrapper = mount(mockComponent, {
+		wrapper = mount(FinancialStatistics, {
 			localVue,
-      
+      propsData: {
+        bg: '#000',
+        icon: 'certification',
+        topText: 'meow 😺',
+        middleText: 'this is a cat that', 
+        middleTitle: 'Meowwwws 😺😺😺',
+        bottomText: 'Cats also purrrr 😺😺😺', 
+      }
 		})
 	})
 
@@ -112,25 +73,10 @@ describe('Type#1 => Financial cards', () => {
 
 
 
-    it('should test icon properties', () => {
-      const icon = wrapper.find("[data-test='icon']")
-      
-      /**
-       * This following line should test image fixed hight limitation
-       * or max height..
-       * it shouldn't be exact 2rem, but I think it is better to use rem
-       * instead of pixels
-       */
-      expect(icon.attributes().width).toBe('1em') // change the 1em
-      
-  });
-
-
   it('should test top-text properties', () => {
-    const topText = wrapper.find("[data-test='top-text']").find('p')
+    const topText = wrapper.find("[data-test='top-text']").find('div')
     
     expect(topText.text()).toBe('meow 😺')
-    expect(topText.attributes().fontSize).toBe('0.9em') // shouldn't be 0.9 rem
   });
   
   it('should test middle-text properties', () => {
@@ -158,22 +104,32 @@ describe('Type#1 => Financial cards', () => {
  * 
  */
 describe('Type#1 => Test reusability for Financial cards ', () => {
+  beforeEach(() => {
+		
+
   const targetComponent = {
     template: `
-      <mock-component />
-    `,
+      <financial-statistics />
+    `,    
     components: {
-      'mock-component': mockComponent
+      FinancialStatistics
     }
   }
-	beforeEach(() => {
-		const localVue = createLocalVue()
+  const localVue = createLocalVue()
 		localVue.use(BootstrapVue)
     localVue.component('b-icon', BIcon)
 		wrapper = mount(targetComponent, {
 			localVue,
-      
+      propsData: {
+        bg: '#000',
+        topText: 'meow 😺😺',
+        middleText: 'this is a cat that', 
+        middleTitle: 'Meowwwws 😺😺😺',
+        bottomText: 'Cats also purrrr 😺😺😺',
+        icon: 'certification'
+      },
 		})
+
 	})
 
 	// Unmount wrapper after each test to prevent memory leaks

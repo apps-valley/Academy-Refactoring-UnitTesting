@@ -10,50 +10,29 @@ import {
 
 // import component here
 // import Statistics from '@/components/WhateverComponent'
-
+import ChartStatistics from '@/components/ChartStatistics'
 let wrapper
 
 // NOTE: this is just a mock
 // We need to use a chart child-component for this mission
 // Feel free to use Chartjs 
-const MockComponent = {
-  template: `
-    <b-card variant="primary">
-      <b-container>
-        <b-row data-test="row">
-          <b-col cols="12" data-test="title">
-            <h3>
-              {{ title }}
-            </h3>
-          </b-col>
 
-          <b-col cols="12" data-test="progress-col">
-            <ChartComponent :color="primary" data-test="prog" />
-          </b-col>
-        </b-row>
-      </b-container>
-    </b-card>
-  `,
-  props: {
-    text: {
-      type: String,
-      default: 'Meow 😺'
-    },
-    count: {
-      type: String,
-      default: '123456'
-    }
-  }
-}
 
-describe('Test TotalTicket component', () => {
+describe('Test ChartStatistics component', () => {
   beforeEach(() => {
     const localVue = createLocalVue()
     localVue.use(BootstrapVue)
     
-    wrapper = mount(MockComponent, {
+    wrapper = mount(ChartStatistics, {
       localVue,
-      stubs: ['ChartComponent']
+      stubs: ['ChartComponent'],
+      propsData: {
+        title: 'String',
+        greenText: 'String',
+        grayText: 'String',
+        steps: 12,
+        tSteps: 34
+      }
     })
 
   })
@@ -83,9 +62,9 @@ describe('Test TotalTicket component', () => {
 describe('should be reusable', () => {
   beforeEach(() => {
     const ParentComponent = {
-      template: '<MockComponent />',
+      template: '<ChartStatistics />',
       components: {
-        MockComponent
+        ChartStatistics
       }
     }
     const localVue = createLocalVue()
