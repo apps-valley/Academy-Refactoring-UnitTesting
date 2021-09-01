@@ -2,7 +2,7 @@ import {
 	mount,
 	createLocalVue
 } from '@vue/test-utils'
-import UserImage from '@/components/UserImage.vue'
+import UserImage from '@/components/UserImage'
 import {
 	BootstrapVue
 } from 'bootstrap-vue'
@@ -17,7 +17,7 @@ describe('UserImage', () => {
 		wrapper = mount(UserImage, {
 			localVue,
 			propsData: {
-				url: 'https://miro.medium.com/max/785/0*Ggt-XwliwAO6QURi.jpg'
+				url: '1.jpg'
 			}
 		})
 	})
@@ -40,7 +40,7 @@ describe('UserImage', () => {
 		/**
 		 * This tests if the default img src we provided loads
 		 */
-		expect(images.at(0).attributes().src).toBe('https://miro.medium.com/max/785/0*Ggt-XwliwAO6QURi.jpg')
+		expect(images.at(0).attributes().src).toBe('1.jpg')
 
 		// NOTE: this should be fulfilled
 		expect(targetImg.element.style.getPropertyValue('max-width')).toBe("100px");

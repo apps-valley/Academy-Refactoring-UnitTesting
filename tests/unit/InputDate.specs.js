@@ -10,6 +10,7 @@ describe('InputDate', () => {
 		localVue.use(BootstrapVue)
 
 		wrapper = mount(InputDate, {
+			date: '',
 			localVue,
 			propsData: {
 				placeHolder: 'Input date'
@@ -37,20 +38,23 @@ describe('InputDate', () => {
 		)
 	})
 
-	// TODO: consider this url : https://github.com/buefy/buefy/issues/1846https://github.com/buefy/buefy/issues/1846
 	test('check if the datepicker is returning correctly', async () => {
-		const datePicker = wrapper.find(
-			'[data-test=\'datepicker\']'
-		)
-		const datePickerTrigger = wrapper
+		await wrapper.setData({ date: newDate })
+		const datePickerLabel = wrapper
 			.find('[data-test=\'datepicker\']')
-			.find('button')
-		// await datePickerTrigger.trigger('click')
+			.find('label')
 
-		console.log(
-			datePicker,
-			'---',
-			datePickerTrigger
-		)
+		const expectedDate = formatDate(wrapper.vm.date)
+		// to remove week day
+		const labelAry = datePickerLabel.text().split(',')
+		const result = formatDate(`${labelAry[1]}, ${labelAry[2]}`)
+
+		expect(result).toBe(expectedDate)	
 	})
+
+	const formatDate = (date) => {
+		const d = new Date(date)
+		// will return date without time string.
+		return d.toString().slice(0, 15)
+	}
 })

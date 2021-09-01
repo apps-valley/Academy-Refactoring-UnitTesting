@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import UserImage from '@/components/admin/UserImage.vue'
+import UserImage from '@/components/UserImage.vue'
 
 describe('UserImage', () => {
   test('is a Vue instance', () => {
