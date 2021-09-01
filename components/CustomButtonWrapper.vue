@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Button
+  <Button v-if="btnType === 'gradient-primary__white'"
       classes="button__element button btn-gradient-primary rounded_radius no_outline"
       :to="to"
       :icon="icon"
@@ -9,7 +9,7 @@
       :circle="circle"
   >
   </Button>
-  <Button
+  <Button v-if="btnType === 'white__gray__outlined'"
       classes="button__element button transparent_gray rounded_radius"
       :to="to"
       :icon="icon"
@@ -18,7 +18,7 @@
       :circle="circle"
   >
   </Button>
-  <Button
+  <Button v-if="btnType === 'light-gray__gray'"
       classes="button__element button bg-light-gray title__gray no_outline rounded_radius"
       :to="to"
       :icon="icon"
@@ -27,7 +27,7 @@
       :circle="circle"
   >
   </Button>
-  <Button
+  <Button v-if="btnType === 'red__white'"
         classes="button__element button bg_red rounded_radius"
         :to="to"
       :icon="icon"
@@ -36,7 +36,7 @@
       :circle="circle"
   >
   </Button>
-  <Button
+  <Button v-if="btnType === 'light-red__red'"
     classes="button__element button light_red  rounded_radius no_outline"
       :to="to"
       :icon="icon"
@@ -45,7 +45,7 @@
       :circle="circle"
   >
   </Button>
-  <Button
+  <Button v-if="btnType === 'white__red__outlined'"
     classes="button__element button transparent_red rounded_radius "
       :to="to"
       :backgroundColor="bg"
@@ -56,7 +56,7 @@
       :circle="circle"
   >
   </Button>
-  <Button
+  <Button v-if="!btnType"
     classes="button__element button rounded_radius no_outline"
       :to="to"
       :bg="bg"
@@ -93,7 +93,7 @@ export default {
 		},
 		to: String,
 		bg: String,
-		customClass: String,
+    customClass: String,
 		color: String,
 		pullRight: Boolean,
 		circle: Boolean

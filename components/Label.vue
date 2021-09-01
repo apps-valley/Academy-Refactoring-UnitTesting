@@ -4,14 +4,17 @@
     :class="{
       'active' : active,
       'offline': offline
-      }">
+      }"
+      class="text-center" align-v>
+    <!-- NOTE: Using require in the markup breaks SSR (We could move it to computed) -->
     <b-img
+      align-self-center
       v-if="icon"
-      class="icon"
-      :src="url"
+      class="icon my-1"
+      :src="require(`@/assets/images/icons/${icon}.svg`)"
       alt="icon">
     </b-img>
-    {{text}}
+    <span class="my-1">{{text}}</span>
   </label>
 </template>
 
@@ -20,14 +23,14 @@ export default {
 	name: 'Label',
 	props: {
 		text: String,
-		url: String,
-		icon: Boolean,
+    color: {
+			type: String,
+			default: 'var(--color-primary)'
+		},
+		icon: String,
 		active: Boolean,
 		offline: Boolean,
-		color: {
-			type: String,
-			default: '--color-primary'
-		},
+
 		border: String
 	},
 	data() {
@@ -41,17 +44,16 @@ export default {
   label{
     background-color: var(--bg-color);
     border: 1px solid var(--bd-color);
-    padding: 2px 15px;
+    padding: 3px 15px;
     border-radius: 25px;
     color: white;
     display: inline-flex;
     font-size: 12px;
   }
   .icon{
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      margin: 3px 2px;
+      width: 16px;
+      height: 16px;
+      margin: 3px 4px;
   }
   .active{
     background-color: #24e8a73a;

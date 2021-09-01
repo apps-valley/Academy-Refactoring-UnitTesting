@@ -17,7 +17,7 @@
       </div>
       <br>
       <div class="text-center">
-        <InputSelect align-self="center" placeHolder="enter name..." :options="['Small', 'Medium', 'Large', 'Extra Large']" />
+        <InputWrapper type="Select" placeHolder="enter name..." :options="['Small', 'Medium', 'Large', 'Extra Large']" />
         <p>{{text}}</p>
       </div>
       <br>

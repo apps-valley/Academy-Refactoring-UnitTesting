@@ -8,16 +8,16 @@
         </b-col>
         <b-col cols="6">
             <label for="fileInput" >{{fileName}}</label>
-                <input 
+                <input
                     id="fileInput"
-                    :placeholder="placeHolder" 
+                    :placeholder="placeHolder"
                     style="border: none; background-color: transparent"
                     tabindex="-1"
                     type="file"
                     class="visually-hidden"
                     @change="onFileChange"
                 />
-            
+
         </b-col>
         <b-col cols="3">
             <CustomButtonWrapper

@@ -9,7 +9,7 @@
                 {{name}} <br>
                 <span class="text-black-50" style="font-size: 10px;">Last seen: {{lastSeen}}</span>
         </b-col>
-        <b-col cols="7" class="d-flex" align-v="center">
+        <b-col cols="7" class="d-flex" align-v="center" align-h="left">
             <CustomButtonWrapper
                 btnType="gradient-primary__white"
                 btnTitle="الدورات التي يدرسها"

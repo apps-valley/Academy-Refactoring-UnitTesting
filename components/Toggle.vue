@@ -14,8 +14,9 @@
     <label 
         v-else 
         class="switch-without-text"
+        
     >
-        <input type="checkbox" @click="toggleCheckbox" id="togBtnNoText">
+        <input  type="checkbox" id='togBtnNoText' @click="toggleCheckbox">
         <div class="switch-without-text__slider switch-without-text__round"></div>
       </label>
     </div> 
@@ -31,7 +32,7 @@ export default {
 	methods: {
 		toggleCheckbox() {
 			this.checkbox = !this.checkbox
-			this.$emit('setCheckboxVal', this.checkbox)
+			this.$emit('change', this.checkbox)
 		}
 	},
 	props: {
@@ -168,7 +169,7 @@ input:checked + .switch__slider .switch__off {
 .switch-without-text__slider {
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 30px;
   height: 15px;
 }
 
@@ -177,7 +178,7 @@ input:checked + .switch__slider .switch__off {
 }
 
 .switch-without-text__slider {
-  position: absolute;
+  /* position: absolute; */
   cursor: pointer;
   top: 0;
   left: 0;
@@ -192,8 +193,8 @@ input:checked + .switch__slider .switch__off {
 .switch-without-text__slider:before {
   position: absolute;
   content: "";
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   left: -6px;
   bottom: -5px;
   background-color: gray;
@@ -213,9 +214,9 @@ input:focus + .switch-without-text__slider {
 }
 
 input:checked + .switch-without-text__slider:before {
-  -webkit-transform: translateX(36px);
-  -ms-transform: translateX(36px);
-  transform: translateX(36px);
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
 }
 
 .switch-without-text__slider.switch-without-text__round {

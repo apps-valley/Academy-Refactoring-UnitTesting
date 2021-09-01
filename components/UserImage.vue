@@ -1,7 +1,8 @@
 <template>
   <div data-test="user-image">
-    <b-img v-if="url" data-test="dynamic-image" :src="imgUrl"></b-img>
+    <b-img style="max-width: 100px" v-if="url" data-test="dynamic-image" :src="dynamicImage"></b-img>
     <b-img
+      style="max-width: 100px"
       v-else
       data-test="mock-image"
       :src="staticImage">
@@ -13,18 +14,18 @@
 export default {
 	name: 'UserImage',
 	props: {
-		url: String,
-    default: null
+		url: {
+      type: String
+          }
 	},
 	data() {
 		return {
-      // imgUrl: require(`@/assets/images/${this.url}`),
       staticImage: require('@/assets/images/icons/member-wight-full.svg')
     }
 	},
   computed: {
-    imgUrl() {
-      if (this.url) return require(`@/assets/images/${this.url}`)
+    dynamicImage() {
+      return require(`@/assets/images/${this.url}`)
     }
   }
 }
