@@ -1,0 +1,61 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+>
+  <g
+    id="Group_18645"
+    data-name="Group 18645"
+    transform="translate(-180 -38)"
+  >
+    <rect
+      id="Rectangle_3143"
+      data-name="Rectangle 3143"
+      width="24"
+      height="24"
+      transform="translate(180 38)"
+      fill="none"
+    />
+    <g
+      id="document"
+      transform="translate(175.33 39.666)"
+    >
+      <path
+        class="svg-secondary-fill"
+        id="Path_64221"
+        data-name="Path 64221"
+        d="M19.843,0H11.165A2.785,2.785,0,0,0,8.384,2.781V17.887a2.785,2.785,0,0,0,2.781,2.781h11.01a2.784,2.784,0,0,0,2.781-2.781V5.715Zm.405,2.652,2.336,2.611H20.248V2.652ZM22.174,19.2H11.165A1.317,1.317,0,0,1,9.85,17.887V2.781a1.317,1.317,0,0,1,1.315-1.315h7.617V6.728H23.49V17.887A1.317,1.317,0,0,1,22.174,19.2Z"
+        transform="translate(0)"
+        fill="#00d0d3"
+      />
+      <rect
+        class="svg-secondary-fill"
+        id="Rectangle_3140"
+        data-name="Rectangle 3140"
+        width="10.493"
+        height="1.466"
+        transform="translate(11.423 14.818)"
+        fill="#00d0d3"
+      />
+      <rect
+        class="svg-secondary-fill"
+        id="Rectangle_3141"
+        data-name="Rectangle 3141"
+        width="10.493"
+        height="1.466"
+        transform="translate(11.423 11.632)"
+        fill="#00d0d3"
+      />
+      <rect
+        class="svg-secondary-fill"
+        id="Rectangle_3142"
+        data-name="Rectangle 3142"
+        width="10.493"
+        height="1.466"
+        transform="translate(11.423 8.447)"
+        fill="#00d0d3"
+      />
+    </g>
+  </g>
+</svg>

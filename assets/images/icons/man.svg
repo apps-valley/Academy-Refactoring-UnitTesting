@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="166.138" height="167.79" viewBox="0 0 166.138 167.79">
+  <defs>
+    <linearGradient id="linear-gradient" y1="1" x2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#05a4d1"/>
+      <stop offset="1" stop-color="#00d0d3"/>
+    </linearGradient>
+    <filter id="Combined_Shape" x="0" y="0" width="166.138" height="167.79" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="24.5" result="blur"/>
+      <feFlood flood-color="#101d71" flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="man" transform="translate(92.638 73.5)">
+    <g id="scientist">
+      <g transform="matrix(1, 0, 0, 1, -92.64, -73.5)" filter="url(#Combined_Shape)">
+        <path id="Combined_Shape-2" data-name="Combined Shape" d="M-12.32,20.79l-1.975-1.68a.583.583,0,0,1-.144-.7l.645-1.291h-1.191a.583.583,0,0,1-.5-.276.581.581,0,0,1-.025-.567l.447-.9-.407.163a5.539,5.539,0,0,0-3.307,3.789l-.365,1.463Zm2.168-1.651-2.387-4.772-.889.356-.612,1.225h1.191a.584.584,0,0,1,.5.277.581.581,0,0,1,.025.567l-.862,1.725,3.038,2.273Zm4.2-.622-.863-1.725a.585.585,0,0,1,.026-.568.582.582,0,0,1,.5-.276H-5.1l-.613-1.225-.889-.356-2.386,4.772V20.79ZM0,20.79l-.366-1.463a5.538,5.538,0,0,0-3.307-3.789l-.408-.163.448.9a.584.584,0,0,1-.025.567.585.585,0,0,1-.5.276H-5.345l.645,1.291a.581.581,0,0,1-.144.7l-1.975,1.68Zm-7.691-6.849a4.653,4.653,0,0,1-1.878.407,4.649,4.649,0,0,1-1.878-.407L-9.569,17.7ZM-3.817,6.4a5.258,5.258,0,0,1-2.21-2.24,22.739,22.739,0,0,1-9.267,2.372c.709,3.3,3.1,6.646,5.725,6.646C-6.9,13.181-4.489,9.745-3.817,6.4Zm-11.477.132h0ZM-6.029,2.85a.582.582,0,0,1,.5-.034.585.585,0,0,1,.341.367,4.155,4.155,0,0,0,1.54,1.967c.011-.174.017-.346.017-.517A4.036,4.036,0,0,0-5.287,1.021,7.581,7.581,0,0,0-9.569,0a7.584,7.584,0,0,0-4.282,1.021,4.037,4.037,0,0,0-1.656,3.613c0,.24.011.485.033.733q.146,0,.291,0A21.733,21.733,0,0,0-6.029,2.85Z" transform="translate(92.64 73.5)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>

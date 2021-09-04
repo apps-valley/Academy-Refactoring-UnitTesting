@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="171" height="165" viewBox="0 0 171 165">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="1" x2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#05a4d1"/>
+      <stop offset="1" stop-color="#00d0d3"/>
+    </linearGradient>
+    <filter id="Combined_Shape" x="0" y="0" width="171" height="165" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="24.5" result="blur"/>
+      <feFlood flood-color="#101d71" flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="book" transform="translate(73.5 73.5)">
+    <g id="open-book">
+      <g transform="matrix(1, 0, 0, 1, -73.5, -73.5)" filter="url(#Combined_Shape)">
+        <path id="Combined_Shape-2" data-name="Combined Shape" d="M22.949,17.978a21.05,21.05,0,0,0-9.092-.172,9.639,9.639,0,0,1,6.471-2.169,2.178,2.178,0,0,0,2.191-2.152V2.916h.623A.852.852,0,0,1,24,3.758v13.4a.832.832,0,0,1-.323.659.867.867,0,0,1-.535.184A.882.882,0,0,1,22.949,17.978ZM.323,17.816A.833.833,0,0,1,0,17.157V3.758a.852.852,0,0,1,.859-.842h.623v10.57a2.178,2.178,0,0,0,2.19,2.152,9.642,9.642,0,0,1,6.472,2.169,21.036,21.036,0,0,0-9.092.172A.886.886,0,0,1,.858,18,.863.863,0,0,1,.323,17.816ZM12.667,3.885a.8.8,0,0,1,.118-.428C14.681.46,18.325,0,20.329,0h0a.855.855,0,0,1,.6.245.831.831,0,0,1,.253.6V13.486a.853.853,0,0,1-.86.842c-2,0-5.349.414-7.659,2.787ZM3.675,14.328a.853.853,0,0,1-.859-.842V.843a.83.83,0,0,1,.252-.6A.859.859,0,0,1,3.669,0h0c2,0,5.648.46,7.544,3.458a.8.8,0,0,1,.119.428v13.23C9.023,14.742,5.674,14.333,3.675,14.328Z" transform="translate(73.5 73.5)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>
